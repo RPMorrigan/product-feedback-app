@@ -6,36 +6,52 @@ Base URL: `https://REPLACE-THIS-WITH-YOUR-DEPLOYED-URL.onrender.com`
 
 | Resource         | Method | Endpoint                      | Description                              |
 |------------------|--------|-------------------------------|------------------------------------------|
-| `suggestions`    | GET    | /get-all-suggestions          | Write your description here              |
-| `suggestions`    | GET    | /get-suggestions-by-category  | Write your description here              |
-| `suggestions`    | POST   | /add-one-suggestion           | Write your description here              |
+| `suggestions`    | GET    | /get-all-suggestions          | Retrieves all items with with all columns.              |
+| `suggestions`    | GET    | /get-suggestions-by-category  | Only returns rows with the specified category.              |
+| `suggestions`    | POST   | /add-one-suggestion           | Create and instert a new suggestion.              |
 
 ---
 
 ### 🔹 GET `/get-all-suggestions`
 
-**Description:** Write your description here
+**Description:** Retrieves all rows in the suggestions table in order of ascending id.
 
 **Example Response:**
 
-```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+[
+    {
+        "id": 1,
+        "feedback_title": "Day & Night",
+        "category": "Feature",
+        "feedback_description": "Adds a dark and light mode."
+    },
+    {
+        "id": 2,
+        "feedback_title": "Cold Steel",
+        "category": "UX",
+        "feedback_description": "Build animations around the feel of a sleek katana slash."
+    }
+]
 ```
 
 ---
 
 ### 🔹 GET `/get-suggestions-by-category/:category`
 
-**Description:** Write your description here
+**Description:** Only retrieves rows with the specified category.
 
-**Example Response:**
+**Example Response:** When retrieving UX.
 
-```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+[
+    {
+        "id": 2,
+        "feeback_title": "Cold Steel",
+        "category": "UX",
+        "feedback_description": "Build animations around the feel of a sleek katana slash."
+    }
+]
 ```
 
 ---
@@ -46,18 +62,18 @@ Use spaces/indents to format the data if it is an array or object.
 
 **Example Request Body:**
 
-```
-Write the data required in the request body. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+{
+    "feature_title": "My Title",
+    "category": "UI",
+    "feature_description": "This is how it would work."
+}
 ```
 
 **Example Response:**
 
-```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+Suggestion was successfully added!
 ```
 ---
 
