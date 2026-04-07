@@ -51,8 +51,8 @@ const addSuggestion = async (feedback_title, category, feedback_description) => 
 
     let query = await db.query(
         `
-        INSERT INTO suggestions (feedback_title, category, feedback_description)
-        VALUES ($1, $2, $3)`, [feedback_title, category, feedback_description]
+        INSERT INTO suggestions (feedback_title, category, feedback_detail)
+        VALUES ($1, $2, $3)`, [feedback_title, category, feedback_detail]
     );
 
     console.log(`Suggestion was added succesfully!`);
