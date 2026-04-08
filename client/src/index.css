@@ -143,13 +143,21 @@ button {
 /* Inputs & Selectors */
 
 input {
+  color: var(--black0);
+  height: 3rem;
+  width: 14rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: var(--grey0);
+  border: none;
+  border-radius: 0.3rem;
 }
 
 select {
   appearance: none;
   color: var(--black0);
   height: 3rem;
-  width: 15rem;
+  width: 16rem;
   padding-left: 1rem;
   background: var(--grey0) right/4% url('./assets/chevron.svg') no-repeat;
   background-position-x: 90%;
@@ -157,6 +165,11 @@ select {
   border-radius: 0.3rem;
 }
 
+select:active, select:open {
+  border: solid thin var(--blue0);
+}
+
 option {
   margin: 2rem auto;
+  background: white;
 }
