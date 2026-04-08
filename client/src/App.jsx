@@ -9,10 +9,14 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <h1>
+            <Link to="/" className="my-company">My Company</Link>
+            </h1>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <h2>
+            <Link to="/about" className="feedback">Feedback Board</Link>
+            </h2>
           </li>
         </ul>
       </nav>

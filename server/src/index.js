@@ -47,7 +47,7 @@ const getSuggestionsByCategory = async (category) => {
 }
 
 // 3. Add a suggestion
-const addSuggestion = async (feedback_title, category, feedback_description) => {
+const addSuggestion = async (feedback_title, category, feedback_detail) => {
 
     let query = await db.query(
         `
@@ -59,6 +59,20 @@ const addSuggestion = async (feedback_title, category, feedback_description) => 
 
     return (`Suggestion was added succesfully!`);
 
+}
+
+// Personal Bonus ◊
+// Add Category
+const addCategory = async (category) => {
+    let query = await db.query(
+        `
+        INSERT INTO categories (category)
+        VALUES ($1)`, [category]
+    );
+
+    console.log('Category was succesfully added!');
+
+    return ('Category was succesfully added!');
 }
 
 
@@ -107,9 +121,28 @@ app.post('/add-suggestion', async (req, res) => {
 
         res.send(result);
 
-} catch (error) {
-    console.error(error);
-    res.status(500).json(`An error occurred during attempt to add suggestion:, ${error.message}`);
-}
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(`An error occurred during attempt to add suggestion:, ${error.message}`);
+    }
 
 });
+
+// Personal Bonus ◊
+// Add Category
+
+app.post('/add-category', async (req, res) => {
+    
+    try {
+
+        const { category } = req.body;
+        
+        const result = await addCategory(category);
+        res.send(result);
+
+    } catch (error) {
+    console.error(error);
+    res.status(500).json(`An error occurred during attempt to add a category:, ${error.message}`);
+    }
+    
+})

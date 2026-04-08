@@ -169,7 +169,57 @@ select:active, select:open {
   border: solid thin var(--blue0);
 }
 
-option {
-  margin: 2rem auto;
-  background: white;
+/* Tablet (portrait) */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+}
+
+/* Phone (Portrait) */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    body {
+      margin: 0;
+    }
+
+    nav {
+      display: Flex;
+      background-color: var(--purple0);
+    }
+
+    li {
+      list-style-type: none;
+    }
+    
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .my-company {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 29px;
+      letter-spacing: -0.25px;
+    }
+
+    .feedback{
+      color: var();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: -0.2;
+    }
+
+    .home-body {
+      background: var(--grey0);
+    }
+
 }
