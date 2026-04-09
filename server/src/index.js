@@ -1,7 +1,6 @@
 // Necessary imports
 import express from "express";
 import pg from "pg";
-import config from "./config.js";
 
 // Boilerplate code to connect to the database
 const db = new pg.Pool({
