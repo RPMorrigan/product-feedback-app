@@ -114,9 +114,9 @@ app.post('/add-suggestion', async (req, res) => {
 
     try {
     
-        const { feedback_title, category, feedback_description } = req.body;
+        const { feedback_title, category, feedback_detail } = req.body;
 
-        const result = await addSuggestion(feedback_title, category, feedback_description);
+        const result = await addSuggestion(feedback_title, category, feedback_detail);
 
         res.send(result);
 
