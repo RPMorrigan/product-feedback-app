@@ -58,7 +58,7 @@ Base URL: `https://product-feedback-app-1xyt.onrender.com`
 
 ### 🔹 POST `/add-one-suggestion`
 
-**Description:** Write your description here
+**Description:** Adds a suggestion to the table. This requires, the feature title, the category, and the feature description.
 
 **Example Request Body:**
 

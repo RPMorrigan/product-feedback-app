@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import '../index.css';
+import Card from '../components/Card';
 
 // pages/Home.jsx
 export default function Home() {
@@ -8,12 +9,13 @@ export default function Home() {
 
   const fetchSuggestions = async () => {
     const response = await fetch('api/get-all-suggestions');
-    const data = await response.json();
+    const data =  await response.json();
 
     setSuggestions(data);
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchSuggestions()
   }, []);
 
