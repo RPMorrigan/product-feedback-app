@@ -4,6 +4,7 @@
  --purple0: #AD1FEA;
  --blue0: #4661E6;
  --blue1: #62BCFA;
+ --blue2: rgba(70, 97, 230, 0.1);
  --orange0: #F49F85;
  --crimson: #D73737;
  --black0: #373F68;
@@ -16,17 +17,57 @@
 
 
 /* ------------------------------------------ */
-/* Typography */
+/* Nav */
 
 body{
   font-family: 'Jost';
+  background-color: var(--grey0);
+  margin: 0;
 }
 
+nav {
+  display: Flex;
+  background-color: var(--purple0);
+  height: 5rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.suggestion-nav {
+  display: flex;
+  color: var(--white0);
+  background: #3A4374;
+}
+
+.my-company {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: -0.25px;
+}
+
+.feedback{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.2;
+}
+
+/* ------------------------------------------ */
+/* Typography */
+
 h1 {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    letter-spacing: -0.25px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -0.25px;
 }
 
 h2 {
@@ -50,22 +91,35 @@ h4 {
   letter-spacing: -0.2;
 }
 
-.bodyTxt0 {
+.body-txt0 {
   font-weight: regular;
   font-size: 16px;
   line-height: 23px;
 }
 
-.bodyTxt1 {
+.body-txt1 {
   font-weight: regular;
   font-size: 15px;
   line-height: 22px;
 }
 
-.bodyTxt2 {
+.body-txt2 {
   font-weight: regular;
   font-size: 13px;
   line-height: 19px;
+}
+
+.request-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  background: var(--white0);
+  padding: 2rem;
+  margin: 2rem;
+
+  & button {
+    margin: 1rem auto;
+  }
 }
 
 
@@ -77,7 +131,7 @@ button {
   border-radius: 0.5rem;
 }
 
-.smallButton {
+.small-button {
   width: 10rem;
   height: 2.7rem;
   font-family: 'Jost';
@@ -87,7 +141,7 @@ button {
   letter-spacing: -0.2;
 }
 
-.smallButton:hover {
+.small-button:hover {
   opacity: 75%;
 }
 
@@ -111,7 +165,12 @@ button {
   background: var(--crimson);
 }
 
-.bigButton {
+.button5 {
+  color: var(--blue0);
+  background: var(--blue2);
+}
+
+.big-button {
   font-family: 'Jost';
   font-weight: bold;
   font-size: 14px;
@@ -124,18 +183,37 @@ button {
   }
 }
 
-.bigButton span{
+.big-button span{
   margin-left: 1rem;
 }
 
-.bButton1 {
+.big-button1 {
   color: white;
   background: var(--black0);
 }
 
-.bButton2 {
+.big-button2 {
   color: var(--black0);
   background: var(--white0);
+}
+
+.filter-buttons-wrap {
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: center;
+  margin: 2rem;
+  gap: 1rem;
+  background: var(--white0);
+  height: 5rem;
+}
+
+.filter-button {
+  width: 10rem;
+  height: 2.7rem;
+  font-family: 'Jost';
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.2;
 }
 
 
@@ -185,40 +263,11 @@ select:active, select:open {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
 
-    body {
-      margin: 0;
-    }
-
-    nav {
-      display: Flex;
-      background-color: var(--purple0);
-    }
-
-    li {
-      list-style-type: none;
-    }
-    
-    a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .my-company {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 29px;
-      letter-spacing: -0.25px;
-    }
-
-    .feedback{
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 20px;
-      letter-spacing: -0.2;
-    }
-
-    .home-body {
-      background: var(--grey0);
-    }
+.page-title {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.2;
+}
 
 }
