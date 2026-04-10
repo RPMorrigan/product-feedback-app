@@ -7,8 +7,8 @@ const Card = ({ suggestion }) => {
     return(
     <div className="suggestion-card">
             <h3>{ feedback_title }</h3>
-            <p>{feedback_detail}</p>
-            <button>{ category }</button>
+            <p className='body-text2'>{feedback_detail}</p>
+            <button className='filter-button'>{ category }</button>
     </div>)
 }
 

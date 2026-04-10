@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import '../index.css';
 import Card from '../components/Card';
+import config from '../config.jsx'
 
 // pages/Home.jsx
 export default function Home() {
 
   const [suggestions, setSuggestions] = useState([]);
-  const [filters, setFilters] = useState([]);
+  // const [filters, setFilters] = useState([]);
 
   const fetchSuggestions = async () => {
     const response = await fetch('api/get-all-suggestions');

@@ -10,7 +10,7 @@ function App() {
         <ul>
           <li>
             <h1>
-            <Link to="/" className="my-company">My Company</Link>
+            <Link to="/" className="my-company" className="page-title">My Company</Link>
             </h1>
           </li>
           <li>
