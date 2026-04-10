@@ -9,11 +9,14 @@ export default function Home() {
   // const [filters, setFilters] = useState([]);
 
   const fetchSuggestions = async () => {
-    const response = await fetch('api/get-all-suggestions');
+    const response = await fetch("api/get-all-suggestions");
     const data =  await response.json();
 
     setSuggestions(data);
-  };
+
+  }; 
+
+  console.log('checkpoint #2:', suggestions);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -38,7 +41,7 @@ export default function Home() {
 
     <div className="request-wrapper">
       {suggestions.map(s => {
-        <Card suggestion={s} />
+        return <Card suggestion={s} />
       })}
 
       <h2>There is no feedback yet.</h2>
