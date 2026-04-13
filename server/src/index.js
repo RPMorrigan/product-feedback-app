@@ -84,7 +84,7 @@ const getAllCategories = async () => {
 
     console.log(query.rows);
 
-    return query.rows;
+    return (query.rows);
 
 };
 
@@ -167,7 +167,7 @@ app.get('/get-all-categories', async (req, res) => {
     try {
 
         const result = await getAllCategories();
-        
+
         res.json(result);
 
     } catch (error) {
