@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
+import AddFeedback from './pages/AddFeedback';
 import About from './pages/About';
 import './index.css';
 
@@ -10,7 +11,7 @@ function App() {
         <ul>
           <li>
             <h1>
-            <Link to="/" className="my-company" className="page-title">My Company</Link>
+            <Link to="/" className="my-company">My Company</Link>
             </h1>
           </li>
           <li>
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/AddFeedback" element={<AddFeedback />} />
       </Routes>
     </div>
   );

@@ -246,28 +246,3 @@ select {
 select:active, select:open {
   border: solid thin var(--blue0);
 }
-
-/* Tablet (portrait) */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-}
-
-/* Phone (Portrait) */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-
-.page-title {
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.2;
-}
-
-}
