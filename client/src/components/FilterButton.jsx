@@ -5,7 +5,7 @@ const FilterButton = ({ filter }) => {
     const { category_id, category_name } = filter;
 
     return (
-        <button className={`filter-button button5 filt ${category_id}`}>
+        <button key={`filt${category_id}`} className={`filter-button button5 `}>
             {category_name}
         </button>
     )
