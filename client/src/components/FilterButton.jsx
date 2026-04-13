@@ -2,12 +2,11 @@ import '../index.css'
 
 const FilterButton = ({ filter }) => {
     
-    // const {
-    // } = filter;
+    const { category_id, category_name } = filter;
 
     return (
-        <button>
-            {filter.stringify()}
+        <button className={`filter-button button5 filt ${category_id}`}>
+            {category_name}
         </button>
     )
 

@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import '../index.css';
 import Card from '../components/Card';
+import FilterButton from "../components/FilterButton";
 
 // pages/Home.jsx
 export default function Home() {
 
   const [suggestions, setSuggestions] = useState([]);
-  // const [filters, setFilters] = useState([]);
+  const [filters, setFilters] = useState([]);
 
   const fetchSuggestions = async () => {
     const response = await fetch("api/get-all-suggestions");
@@ -16,10 +17,17 @@ export default function Home() {
 
   }; 
 
-  console.log('checkpoint #2:', suggestions);
+  const fetchFilters = async () => {
+    const response = await fetch("api/get-all-categories");
+    const data = await response.json();
+
+    setFilters(data);
+
+  };
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchFilters()
     fetchSuggestions()
   }, []);
 
@@ -31,12 +39,9 @@ export default function Home() {
     </div>
   
     <div className="filter-buttons-wrap">
-      <button className="filter-button button5">All</button>
-      <button className="filter-button button5">UI</button>
-      <button className="filter-button button5">UX</button>
-      <button className="filter-button button5">Enhancement</button>
-      <button className="filter-button button5">Bug</button>
-      <button className="filter-button button5">Feature</button>
+      {filters.map(f => {
+        return <FilterButton filter={f} />
+      })}
     </div>
 
     <div className="request-wrapper">

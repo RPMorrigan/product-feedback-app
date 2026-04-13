@@ -74,6 +74,20 @@ const addCategory = async (category) => {
     return ('Category was succesfully added!');
 }
 
+// Get all Categories
+const getAllCategories = async () => {
+    let query = await db.query(
+        `
+        SELECT *
+        FROM categories`
+    );
+
+    console.log(query.rows);
+
+    return query.rows;
+
+};
+
 
 // ------------------------------------------------------------
 // These are the endpoints for my Product Feedback App API
@@ -144,4 +158,21 @@ app.post('/add-category', async (req, res) => {
     res.status(500).json(`An error occurred during attempt to add a category:, ${error.message}`);
     }
     
+})
+
+// Get all categories
+
+app.get('/get-all-categories', async (req, res) => {
+
+    try {
+
+        const result = await getAllCategories();
+        
+        res.json(result);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(`An error occurred while fetching categories: ${error.message}`);
+    }
+
 })
