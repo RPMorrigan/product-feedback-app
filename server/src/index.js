@@ -61,19 +61,6 @@ const addSuggestion = async (feedback_title, category, feedback_detail) => {
 }
 
 // Personal Bonus ◊
-// Add Category
-const addCategory = async (category) => {
-    let query = await db.query(
-        `
-        INSERT INTO categories (category)
-        VALUES ($1)`, [category]
-    );
-
-    console.log('Category was succesfully added!');
-
-    return ('Category was succesfully added!');
-}
-
 // Get all Categories
 const getAllCategories = async () => {
     let query = await db.query(
@@ -142,24 +129,6 @@ app.post('/add-suggestion', async (req, res) => {
 });
 
 // Personal Bonus ◊
-// Add Category
-
-app.post('/add-category', async (req, res) => {
-    
-    try {
-
-        const { category } = req.body;
-        
-        const result = await addCategory(category);
-        res.send(result);
-
-    } catch (error) {
-    console.error(error);
-    res.status(500).json(`An error occurred during attempt to add a category:, ${error.message}`);
-    }
-    
-})
-
 // Get all categories
 
 app.get('/get-all-categories', async (req, res) => {

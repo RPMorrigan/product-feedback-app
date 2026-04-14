@@ -109,6 +109,10 @@ h4 {
   line-height: 19px;
 }
 
+.grey-txt {
+  color: var(--grey2);
+}
+
 .request-wrapper {
   display: flex;
   flex-flow: column nowrap;
@@ -120,6 +124,41 @@ h4 {
   & button {
     margin: 1rem auto;
   }
+}
+
+.form-wrap {
+  display: flex;
+  flex-flow: column;
+  background: var(--white0);
+  margin: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+
+    & input {
+      margin-top: 0.25rem;
+      width: calc(100% - 2rem);
+    }
+
+    & h4 {
+      margin: 1.5rem 0
+      0.25rem 0;
+      width: calc(100% - 2rem);
+    }
+
+    & p {
+      margin: 0.25rem auto 1rem;
+    }
+
+    & select {
+      margin: none;
+      width: 100%;
+    }
+
+    & button {
+      width: 100%;
+      margin: 0.5rem auto;
+    }
+
 }
 
 
@@ -197,6 +236,12 @@ button {
   background: var(--white0);
 }
 
+.big-button3 {
+  color: var(--black0);
+  background: none;
+}
+
+
 .filter-buttons-wrap {
   display: flex;
   flex-flow: row-wrap;
@@ -214,6 +259,15 @@ button {
   font-weight: 600;
   font-size: 14px;
   letter-spacing: -0.2;
+
+  &:hover {
+    opacity: 75%;
+  }
+
+  &:active {
+    background: var(--blue0);
+    color: var(--white0);
+  }
 }
 
 
@@ -237,7 +291,7 @@ select {
   height: 3rem;
   width: 16rem;
   padding-left: 1rem;
-  background: var(--grey0) right/4% url('./assets/chevron.svg') no-repeat;
+  background: var(--grey0) right/3% url('./assets/chevron.svg') no-repeat;
   background-position-x: 90%;
   border: none;
   border-radius: 0.3rem;
@@ -245,4 +299,14 @@ select {
 
 select:active, select:open {
   border: solid thin var(--blue0);
+}
+
+textarea {
+  background: var(--grey0);
+  margin: auto auto 2rem auto;
+  resize: none;
+  width: 19rem;
+  border-radius: 0.25rem;
+  border: none;
+  height: 7rem;
 }

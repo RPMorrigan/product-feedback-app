@@ -1,11 +1,11 @@
 import '../index.css'
 
-const FilterButton = ({ filter }) => {
+const FilterButton = ({ filter, onClick }) => {
     
-    const { category_id, category_name } = filter;
+    const {category_name } = filter;
 
     return (
-        <button key={`filt${category_id}`} className={`filter-button button5 `}>
+        <button onClick={onClick} className={`filter-button button5 `}>
             {category_name}
         </button>
     )
