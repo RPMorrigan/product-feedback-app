@@ -38,7 +38,18 @@ export default function Home() {
 
       setSuggestions(data);
     }
-};
+  };
+  
+  const deleteCard = async (id) => {
+    await fetch(`/api/delete-suggestion/${id}`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+        }
+    }
+    )
+    fetchSuggestions();
+  };
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -53,22 +64,27 @@ export default function Home() {
       <button className="add-button big-button" onClick={() => navigate('/AddFeedback')}>+ Add Feedback</button>
     </div>
   
-    <div className="filter-buttons-wrap">
+    <div className="filter-buttons-wrap container">
       {filters.map(f => {
         return <FilterButton key={`filt${f.category_id}`} filter={f} onClick={() => changeFilter(f.category_name)} />
       })}
     </div>
 
-    <div className="request-wrapper">
+    {suggestions.length > 0 ? (
+      <div className="card-wrapper">
       {suggestions.map(s => {
-        return <Card key={`cardNum${s.id}`} suggestion={s} />
+        return <Card key={s.id} onDelete={() => deleteCard(s.id)} suggestion={s} />
       })}
+        </div>
+    ) : (
+      <div className="requests-empty">
 
       <h2>There is no feedback yet.</h2>
       <p className="body-txt1">Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app.</p>
 
       <button className="add-button big-button button1" onClick={() => navigate('/AddFeedback')}>+ Add Feedback</button>
-    </div>
+      </div>
+    )}
 
   </div>
 }

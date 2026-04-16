@@ -75,6 +75,17 @@ const getAllCategories = async () => {
 
 };
 
+// Delete suggestion
+const deleteSuggestion = async (id) => {
+    const { id } = req.body;
+
+    let query = await db.query(`
+        DELETE FROM suggestions
+        WHERE id = $1
+        `, [id])
+
+}
+
 
 // ------------------------------------------------------------
 // These are the endpoints for my Product Feedback App API
@@ -138,6 +149,21 @@ app.get('/get-all-categories', async (req, res) => {
         const result = await getAllCategories();
 
         res.json(result);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json(`An error occurred while fetching categories: ${error.message}`);
+    }
+
+})
+
+app.post('/delete-suggestion/:id', async (req, res) => {
+
+    try {
+
+        const result = await deleteSuggestion();
+
+        res.txt(result);
 
     } catch (error) {
         console.error(error);
